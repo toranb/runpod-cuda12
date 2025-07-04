@@ -1,0 +1,11 @@
+export SSH_PUBLIC_KEY="$(cat ~/.ssh/id_rsa.pub)"
+docker build -t toranb/elixircuda12 . --platform "linux/amd64"
+docker run --rm -p 2222:22 -e SSH_PUBLIC_KEY toranb/elixircuda12
+ssh root@localhost -p 2222
+
+docker push toranb/elixircuda12
+
+## updates to the docker container
+
+docker build -t toranb/elixircuda12:latest . --platform "linux/amd64"
+docker push toranb/elixircuda12:latest
