@@ -14,7 +14,7 @@ RUN apt update -q && apt install -y ca-certificates wget && \
     wget -qO /cuda-keyring.deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb && \
     dpkg -i /cuda-keyring.deb && apt update -q
 
-RUN apt-get install -y cuda-nvcc-12-8 cuda-libraries-12-8 libcudnn9-cuda-12
+RUN apt-get install -y cuda-nvcc-12-9 cuda-libraries-12-9 libcudnn9-cuda-12
 
 RUN apt-get update && apt-get install -y openssh-server
 
