@@ -7,7 +7,7 @@ ARG RUNNER_IMAGE="debian:${DEBIAN_VERSION}"
 
 FROM ${BUILDER_IMAGE}
 
-RUN apt-get update -y && apt-get install -y build-essential git vim tmux \
+RUN apt-get update -y && apt-get install -y build-essential cmake git vim tmux erlang-dev \
     && apt-get clean && rm -f /var/lib/apt/lists/*_*
 
 RUN apt update -q && apt install -y ca-certificates wget && \
